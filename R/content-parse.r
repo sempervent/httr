@@ -1,7 +1,7 @@
 check_encoding <- function(x) {
   ilst <- tolower(iconvlist())
   for (i in 1:length(ilst)) {
-    ilst[i] = gsub(x = ilst[i], pattern = ',', replacement = '')
+    ilst[i] = gsub(x = ilst[i], pattern = ',', replacement = '', fixed = TRUE)
   }
   if ((tolower(x) %in% tolower(iconvlist()))) {
     return(x)
